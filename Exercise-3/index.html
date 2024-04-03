@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Purchase</title>
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <script src="bootstrap.bundle.min.js"></script>
+</head>
+<body onload="displayEntryNames()" style="background-color: azure;">
+
+<div class="row">
+  <br>
+</div>
+<div class="container">
+  <div class="row">
+    <center><h1>Nikon Cameras</h1></center>
+  </div>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-md-6">
+      <br>
+      <h3>Product Purchase</h3>
+      <br>
+      <form id="purchaseForm">
+        <div class="form-group">
+          <label for="name"><b>Name:</b></label>
+          <input type="text" class="form-control" id="name" required>
+        </div>
+        <div class="form-group">
+          <label for="address"><b>Address:</b></label>
+          <input type="text" class="form-control" id="address" required>
+        </div>
+        <div class="form-group">
+          <label for="mobile"><b>Mobile Number:</b></label>
+          <input type="text" class="form-control" id="mobile" required>
+        </div>
+        <div class="form-group">
+          <label for="email"><b>Email ID:</b></label>
+          <input type="email" class="form-control" id="email" required>
+        </div>
+        <div class="form-group">
+          <label for="product"><b>Product Name:</b></label>
+          <select class="form-control" id="product">
+            <option value="Nikon Z6">Nikon Z6</option>
+            <option value="Nikon Z7">Nikon Z7</option>
+            <option value="Nikon ZF">Nikon ZF</option>
+            <option value="Nikon D5300">Nikon D5300</option>
+            <option value="Nikon D7500">Nikon D7500</option>
+            <option value="Nikon D850">Nikon D850</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="quantity"><b>No of Products:</b></label>
+          <input type="number" class="form-control" id="quantity" required>
+        </div>
+        <br>
+        <button type="button" class="btn btn-primary" onclick="calculateTotal()">Submit</button>
+      </form>
+      <br>
+    </div>
+    <div class="col-md-6" id="outputContainer">
+    </div>
+  </div>
+</div>
+
+<script>
+    function displayEntryNames() {
+      var output = "<br><h3>Order Summary:</h3><br>";
+      output += "<p><b>Name: </b></p>";
+      output += "<p><b>Address: </b></p>";
+      output += "<p><b>Mobile Number: </b></p>";
+      output += "<p><b>Email ID: </b></p>";
+      output += "<p><b>Product: </b></p>";
+      output += "<p><b>Quantity: </b></p>";
+      output += "<p><b>Amount for 1 quantity: </b></p>"; 
+      output += "<p><b>Total Amount (without GST): </b></p>";
+      output += "<p><b>GST (18%): </b></p>";
+      output += "<p><b>Total Amount (with GST): </b></p>";
+      document.getElementById("outputContainer").innerHTML = output;
+    }
+    
+    function calculateTotal() {
+      var name = document.getElementById("name").value;
+      var address = document.getElementById("address").value;
+      var mobile = document.getElementById("mobile").value;
+      var email = document.getElementById("email").value;
+      var product = document.getElementById("product").value;
+      var quantity = document.getElementById("quantity").value;
+      
+      var priceMap = {
+        "Nikon Z6": 70000,
+        "Nikon Z7": 65000,
+        "Nikon ZF": 86000,
+        "Nikon D5300": 105000,
+        "Nikon D7500": 92000,
+        "Nikon D850": 70000
+      };
+    
+      var price = priceMap[product] * quantity;
+      var gst = price * 0.18;
+      var totalPrice = price + gst;
+      var output = "<br><h3>Order Summary:</h3><br>";
+      output += "<p><b>Name: </b>" + name + "</p>";
+      output += "<p><b>Address: </b>" + address + "</p>";
+      output += "<p><b>Mobile Number: </b>" + mobile + "</p>";
+      output += "<p><b>Email ID: </b>" + email + "</p>";
+      output += "<p><b>Product: </b>" + product + "</p>";
+      output += "<p><b>Quantity: </b>" + quantity + "</p>";
+      output += "<p><b>Amount for 1 quantity: </b>₹" + priceMap[product].toFixed(2) + "</p>";
+      output += "<p><b>Total Amount (without GST): </b>₹" + price.toFixed(2) + "</p>";
+      output += "<p><b>GST (18%): </b>₹" + gst.toFixed(2) + "</p>";
+      output += "<p><b>Total Amount (with GST): </b>₹" + totalPrice.toFixed(2) + "</p>";
+      document.getElementById("outputContainer").innerHTML = output;
+    }
+    </script>    
+    
+</body>
+</html>
