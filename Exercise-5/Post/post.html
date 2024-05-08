@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GET POST Method</title>
+        <link href="bootstrap.min.css" rel="stylesheet" type="text/css">
+        <script src="bootstrap.bundle.min.js"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <br>
+        <div class="row">
+            <center><h1>POST Method</h1></center>
+        </div>
+        <br>
+        <br>
+        <form method="post" action="http://localhost:9000/login">
+            <div class="container">
+            <table class="table">
+                <tr>
+                    <td class="col-md-6">
+                        <label for="name">Name:</label>
+                    </td>
+                    <td class="col-md-6">
+                        <input type="text" name="name" id="name">
+                    </td>
+                </tr>
+                <tr>
+                    <td><p>Gender: </p></td>
+                    <td>
+                        <input type="radio" name="gender" id="Male" value="Male">
+                        <label for="Male">Male</label>
+                        <br>
+                        <input type="radio" name="gender" id="Female" value="Female">
+                        <label for="Female">Female</label>
+                        <br>
+                        <input type="radio" name="gender" id="Transgender" value="Transgender">
+                        <label for="Transgender">Transgender</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="state">State:</label></td>
+                    <td>
+                        <select name="state" id="state">
+                            <option value="">Select a State</option>
+                            <option value="Tamil Nadu">Tamil Nadu</option>
+                            <option value="Kerala">Kerala</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                            <option value="Telangana">Telangana</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Jammu">Jammu</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="address">Address:</label></td>
+                    <td>
+                        <textarea name="address" id="address" rows="5" cols="50"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="mobile">Mobile Number:</label></td>
+                    <td>
+                        <input type="text" name="mobile" id="mobile">
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="2">
+                        <br>
+                        <input type="checkbox" name="cb" id="cb2">
+                        <label for="cb2">I agree with the terms and conditions of this user form</label>
+                    </td>
+                </tr>
+            </table>
+            </div>
+            <div class="row">
+                <center><button type="submit">Submit</button></center>
+            </div>
+            <br>
+        </form>
+    </body>
+</html>
