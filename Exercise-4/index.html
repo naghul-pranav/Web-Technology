@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form Validation Using DOM</title>
+        <link href="bootstrap.min.css" rel="stylesheet" type="text/css">
+        <script src="bootstrap.bundle.min.js"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <br>
+        <div class="row">
+            <center><h1>User Registration Form</h1></center>
+        </div>
+        <br>
+        <br>
+        <form method="post" onsubmit="return validateForm()">
+            <div class="container">
+            <table class="table">
+                <tr>
+                    <td class="col-md-6">
+                        <label for="name">Name:</label>
+                    </td>
+                    <td class="col-md-6">
+                        <input type="text" name="name" id="name">
+                        <span id="nameError" style="color: red;"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="aadhar">Aadhar Number:</label></td>
+                    <td>
+                        <input type="text" name="aadhar" id="aadhar">
+                        <span id="aadharError" style="color: red;"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><p>Gender: </p></td>
+                    <td>
+                        <input type="radio" name="gender" id="Male">
+                        <label for="Male">Male</label>
+                        <br>
+                        <input type="radio" name="gender" id="Female">
+                        <label for="Female">Female</label>
+                        <br>
+                        <input type="radio" name="gender" id="Transgender">
+                        <label for="Transgender">Transgender</label>
+                        <span id="genderError" style="color: red;"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><p>Languages Known:</p></td>
+                    <td>
+                        <input type="checkbox" name="language" id="Tamil">
+                        <label for="Tamil">Tamil</label>
+                        <br>
+                        <input type="checkbox" name="language" id="Hindi">
+                        <label for="Hindi">Hindi</label>
+                        <br>
+                        <input type="checkbox" name="language" id="English">
+                        <label for="English">English</label>
+                        <span id="langError" style="color: red;"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="district">District:</label></td>
+                    <td>
+                        <select name="district" id="district">
+                            <option value="">Select a district</option>
+                            <option value="Chennai">Chennai</option>
+                            <option value="Coimbatore">Coimbatore</option>
+                            <option value="Dharmapuri">Dharmapuri</option>
+                            <option value="Dindigul">Dindigul</option>
+                            <option value="Erode">Erode</option>
+                            <option value="Madurai">Madurai</option>
+                            <option value="Namakkal">Namakkal</option>
+                            <option value="Tiruppur">Tiruppur</option>
+                            <option value="Vellore">Vellore</option>
+                        </select>
+                        <span id="distError" style="color: red;"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="pincode">Pincode:</label></td>
+                    <td>
+                        <input type="text" name="pincode" id="pincode">
+                        <span id="pinError" style="color: red;"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="address">Address:</label></td>
+                    <td>
+                        <textarea name="address" id="address" rows="5" cols="50"></textarea>
+                        <span id="addressError" style="color: red;"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email Address:</label></td>
+                    <td>
+                        <input type="email" name="email" id="email" size="30">
+                        <span id="emailError" style="color: red;"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="mobile">Mobile Number:</label></td>
+                    <td>
+                        <input type="tel" name="mobile" id="mobile">
+                        <span id="mobileError" style="color: red;"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="username">Username:</label></td>
+                    <td>
+                        <input type="text" name="username" id="username">
+                        <span id="unError" style="color: red;"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="password">Password:</label></td>
+                    <td>
+                        <input type="text" name="password" id="password">
+                        <span id="passwdError" style="color: red;"></span>
+                    </td>
+                </tr>
+            </table>
+            </div>
+            <div class="row">
+                <center><button type="submit">Submit</button></center>
+            </div>
+            <br>
+        </form>
+    </body>
+</html>
